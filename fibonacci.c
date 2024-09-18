@@ -1,5 +1,4 @@
 //Joao vitor kauer schuck
-//codigo feito sem nenhum auxilio externo
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
