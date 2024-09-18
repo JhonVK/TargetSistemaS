@@ -1,4 +1,3 @@
-//Joao vitor kauer schuck
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>

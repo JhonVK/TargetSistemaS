@@ -1,6 +1,3 @@
-//Joao vitor kauer schuck
-//gcc faturamento.c cJSON_Parser/cJSON.c -o faturamento -lm
-//./faturamento
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
