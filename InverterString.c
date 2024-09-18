@@ -17,12 +17,11 @@ int main() {
     if (string[tamanhofinal] == '\n') {
         string[tamanhofinal] = '\0';
         tamanhofinal--;
-
     }
 
     while(i<tamanhofinal){
         char temp=*(string+i);
-        *(string+i)=*(string+tamanhofinal);
+        *(string+i)=*(string+tamanhofinal);//poderia ter usado da forma mais facil(string[i])
         *(string+tamanhofinal)=temp;
         i++;
         tamanhofinal--;
