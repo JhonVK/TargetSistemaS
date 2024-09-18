@@ -29,7 +29,6 @@ int main() {
 
     memoria[tamanho_arquivo] = '\0'; 
 
-
     cJSON *json = cJSON_Parse(memoria);
 
     cJSON_ArrayForEach(item, json) {
