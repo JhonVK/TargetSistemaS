@@ -1,5 +1,5 @@
 Para executar o exemplo que usamos o arquivo JSON (exemplo 3)
-1) Baixar pasta do projeto
+1) Baixar pasta inteira do projeto (TargetSistemas)
 2) Abrir pasta no terminal
 3) executar:    gcc ex3.c cJSON_Parser/cJSON.c -o ex3 -lm
 4) executar:    ./ex3

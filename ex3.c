@@ -57,7 +57,7 @@ int main() {
 
     printf("Menor valor: %d\n", menor);
     printf("Maior valor: %d\n", maior);
-    printf("Dias que faturamento foi maior que a media mensal: %d\n ", dias);
+    printf("Dias que o faturamento foi maior que a media mensal: %d\n ", dias);
 
     cJSON_Delete(json);
     return 0;
