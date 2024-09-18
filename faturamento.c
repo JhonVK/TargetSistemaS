@@ -7,6 +7,11 @@
 #include "cJSON_Parser/cJSON.h"
 
 int main() {
+
+    double soma = 0.0;
+    int count = 0, maior=0, menor=__INT_MAX__, dias=0;
+    cJSON *item = NULL;
+
     FILE *file = fopen("arquivoJSON/dados.json", "r");
     if (file == NULL) {
         printf("Não foi possível abrir o arquivo.\n");
@@ -26,11 +31,7 @@ int main() {
 
 
     cJSON *json = cJSON_Parse(memoria);
- 
-    double soma = 0.0;
-    int count = 0;
-    int maior=0, menor=__INT_MAX__, dias=0;
-    cJSON *item = NULL;
+
     cJSON_ArrayForEach(item, json) {
         cJSON *valor = cJSON_GetObjectItem(item, "valor");
         if (cJSON_IsNumber(valor)) {
@@ -57,7 +58,7 @@ int main() {
 
     printf("Menor valor: %d\n", menor);
     printf("Maior valor: %d\n", maior);
-    printf("Dias que faturamento foi mnaior que a media: %d\n ", dias);
+    printf("Dias que faturamento foi maior que a media mensal: %d\n ", dias);
 
     cJSON_Delete(json);
     return 0;
