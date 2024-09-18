@@ -1,5 +1,6 @@
 //Joao vitor kauer schuck
-
+//gcc faturamento.c cJSON_Parser/cJSON.c -o faturamento -lm
+//./faturamento
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,12 +24,41 @@ int main() {
 
     memoria[tamanho_arquivo] = '\0'; 
 
+
     cJSON *json = cJSON_Parse(memoria);
-    char *json_string = cJSON_Print(json);
-    printf("%s\n", json_string);
+ 
+    double soma = 0.0;
+    int count = 0;
+    int maior=0, menor=__INT_MAX__, dias=0;
+    cJSON *item = NULL;
+    cJSON_ArrayForEach(item, json) {
+        cJSON *valor = cJSON_GetObjectItem(item, "valor");
+        if (cJSON_IsNumber(valor)) {
+            if(valor->valuedouble>maior){
+                maior=valor->valuedouble;
+            }
+            if(valor->valuedouble<menor){
+                menor=valor->valuedouble;
+            }
+            soma += valor->valuedouble;
+            count++;
+        }
+    }
+    double media = soma / count;
 
+       cJSON_ArrayForEach(item, json) {
+        cJSON *valor = cJSON_GetObjectItem(item, "valor");
+        if (cJSON_IsNumber(valor)) {
+            if(valor->valuedouble>media){
+                dias++;
+            }
+        }
+    }
 
-    free(json_string);
+    printf("Menor valor: %d\n", menor);
+    printf("Maior valor: %d\n", maior);
+    printf("Dias que faturamento foi mnaior que a media: %d\n ", dias);
+
     cJSON_Delete(json);
     return 0;
 }
