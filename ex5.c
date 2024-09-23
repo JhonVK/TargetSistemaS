@@ -6,7 +6,6 @@
 
 int main() {
     char *string;
-
     int tamanhoString=50, i=0;
     string=(char *)malloc(sizeof(char)*tamanhoString);
 
