@@ -42,7 +42,6 @@ int main() {
         }
     }
     double media = soma / count;
-
        cJSON_ArrayForEach(item, json) {
         cJSON *valor = cJSON_GetObjectItem(item, "valor");
         if (cJSON_IsNumber(valor)) {
